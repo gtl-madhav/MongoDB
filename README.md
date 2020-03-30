@@ -181,3 +181,5 @@
   * One of the biggest insurance companies on earth MetLife is extensively using MongoDB for its customer service applications;
   * the online classifieds search portal, Craigslist is deeply involved in archiving its data using MongoDB.
   * One of the most hailed brands in the media industry, The New York Times is using MongoDB for its photo submissions and the application that is deployed for form-building.
+
+`Source` : https://intellipaat.com/blog/what-is-mongodb/
