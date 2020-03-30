@@ -167,6 +167,95 @@
   * `Document-oriented Storage` :: It uses BSON format which is a JSON-like format.
   * `Procedures` :: MongoDB JavaScript works well as the database uses the language instead of procedures.
   
+### REPLICATION IN MONGODB
+
+  * Replication is the practice of keeping identical copies of data on multiple servers to keep applications running and data safe. 
+  * There are two set-up designs within MongoDB: 
+         * a Replica Set with **Replication Cluster** and 
+         * a Replica Set with **Arbiter**.
+  * All replica set members send heartbeats (pings) to each other every two seconds.
+  * If a heartbeat does not return within ten seconds, the other servers mark the unresponsive server as inaccessible.
+  
+### Replica Set with Replication Cluster
+
+  * A cluster of MongoDB servers that implements master-subordinate replication for automated failover
+  * When the primary server is unavailable, it triggers an election for one of the remaining secondary servers to act as the new primary server.
+  
+  ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/Secondary.png)
+  
+### Replica Set with Arbiter
+
+  * Arbiter is a Mongod instance where a server is in the replica set but does not hold data.
+  * The arbiter participates in elections as a tie-breaker if a replica set has an even number of servers
+  
+    ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/Arbiter.png)
+    
+### SHARDING IN MONGODB
+
+  * MongoDB’s sharding is the ability to break up a collection in to subsets of data to store them across multiple shards.
+  * This allows the application to grow beyond the resource limits of a standalone server or replica set.
+  
+#### Basic Recommended Sharded Cluster for MongoDB
+
+  ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/Basic-Recommended-Sharded-Cluster-for-MongoDB.png)
+  
+  * `Sharded cluster`: 
+  
+     * The router (Mongos process) acts as a gatekeeper for all requests coming from the client. 
+     * It resolves the requests by using the configuration servers to get the metadata information of each shard, then routes the query to the appropriate shards, and finally combines the results given by the shard(s) to return to the client
+  
+  * `Router in sharded cluster`: 
+  
+     * As shown above, more than one Mongos process runs as a router. 
+     * If utilizing more than one router, both should be configured under a load balancer for an efficient production environment
+  
+  * `Configuration server in sharded cluster`: 
+  
+     * The Mongod process runs as a configuration server that keeps meta data, meaning it makes the decision of which data should be extracted from which shard
+
+  * `Shard in sharded cluster`: 
+     
+     * Each shard is essentially a replica set that holds a portion of data. 
+     * To avoid losing any data, it maintains a copy of its data on all secondary servers. 
+     * In this sense, a collection in MongoDB is stored in multiple parts across multiple shards; to access the full collection, the data must be retrieved from all shards, as shown below
+     
+     ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/Sharded-Cluster.png)
+     
+### Difference Between Shard and Replication
+ 
+`Shared`
+
+  * The shard provides the ability to partition the data and store it across multiple servers.
+  * This increases the hardware capacity of the cluster, meaning that resources are not limited to a single machine.
+  
+  `Replication`
+  
+  * is a duplicate copy of the data in full to be used in the event of a hardware failure.
+  
+### DEFAULT PORTS FOR MONGODB
+
+  | Default Port  | Description |
+| ------------- | ------------- |
+| 27017  | The default port for Mongod and Mongos instances. Change this port with port or -port  |
+| 27018  | The default port when running with the -shardsvr runtime operation or the shardsvr value for the clusterRole setting in a configuration file  |
+| 27019  | The default port when running with the -configsvr runtime operation or the configsvr value for the clusterRole setting in a configuration file  |
+| 28017  | The default port for the web status page. The web status page is always accessible at a port number that is 1000 times greater than the determining port  |
+
+### ENABLE AUTHENTICATION
+
+  * Authentication is the process of proving the identity of a user.
+  * Use the following script to create two users, one with root role permissions and one with readwrite role permissions.
+  * The root role user will hold top level permissions in MongoDB, while the readwrite role permissions allow the user to perform CRUD on collections.
+  
+     * `Root role user`: Apply the following command in the Mongo shell to create a new user (“rootuser” with a password “12345”) who has a root role on the admin database
+use admin
+
+          * db.createUser({user:"rootuser",pwd:"12345", roles:[{role:"root",db:"admin"}]})
+
+     * `Readwrite user`: Apply the following command in the Mongo shell to create a new user (“webuser” with password “12345”) who has readwrite permissions on the application database (“companydb” used in this example) use companydb
+     
+          * db.createUser({user:"webuser", pwd:"12345", roles:[ "readWrite" ]})
+
 ### Why do you need MongoDB technology?
 
   * scalability -> MongoDB has exceptional scalability
@@ -260,4 +349,5 @@
   * the online classifieds search portal, Craigslist is deeply involved in archiving its data using MongoDB.
   * One of the most hailed brands in the media industry, The New York Times is using MongoDB for its photo submissions and the application that is deployed for form-building.
 
-`Source` : https://intellipaat.com/blog/what-is-mongodb/
+`Source` : https://intellipaat.com/blog/what-is-mongodb/ </br>
+`Source` : https://www.3pillarglobal.com/insights/what-is-mongodb
