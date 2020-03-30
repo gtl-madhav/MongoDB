@@ -232,6 +232,30 @@
   
   * is a duplicate copy of the data in full to be used in the event of a hardware failure.
   
+### DEFAULT PORTS FOR MONGODB
+
+  | Default Port  | Description |
+| ------------- | ------------- |
+| 27017  | The default port for Mongod and Mongos instances. Change this port with port or -port  |
+| 27018  | The default port when running with the -shardsvr runtime operation or the shardsvr value for the clusterRole setting in a configuration file  |
+| 27019  | The default port when running with the -configsvr runtime operation or the configsvr value for the clusterRole setting in a configuration file  |
+| 28017  | The default port for the web status page. The web status page is always accessible at a port number that is 1000 times greater than the determining port  |
+
+### ENABLE AUTHENTICATION
+
+  * Authentication is the process of proving the identity of a user.
+  * Use the following script to create two users, one with root role permissions and one with readwrite role permissions.
+  * The root role user will hold top level permissions in MongoDB, while the readwrite role permissions allow the user to perform CRUD on collections.
+  
+     * `Root role user`: Apply the following command in the Mongo shell to create a new user (“rootuser” with a password “12345”) who has a root role on the admin database
+use admin
+
+          * db.createUser({user:"rootuser",pwd:"12345", roles:[{role:"root",db:"admin"}]})
+
+     * `Readwrite user`: Apply the following command in the Mongo shell to create a new user (“webuser” with password “12345”) who has readwrite permissions on the application database (“companydb” used in this example) use companydb
+     
+          * db.createUser({user:"webuser", pwd:"12345", roles:[ "readWrite" ]})
+
 ### Why do you need MongoDB technology?
 
   * scalability -> MongoDB has exceptional scalability
