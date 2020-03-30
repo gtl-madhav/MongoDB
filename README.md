@@ -1,13 +1,26 @@
 # MongoDB
 
+### Before we start 
+
+* if we categorized the database solutions then there are mainly two types of database category available     * RDBMS or Relational Database like SQL Server, Oracle etc.
+    * another type is NoSQL database like MongoDB, CosmosDB etc.
+    
+### NoSQL Types
+
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/no-sql-types.png)
+
 ### What is MongoDB?
 
 * open-source 
 * document-based database management tool that 
 * stores data in JSON-like formats. 
+
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/mongodb2.png)
+
 * It is a highly scalable, 
 * flexible, and 
 * distributed NoSQL database.
+* written in C++
 * non-structured query language
 * one of the most powerful NoSQL systems and databases around
 * Expressive Query Language 
@@ -29,6 +42,18 @@
 * What it means that you can **concentrate more on making your data work harder** rather than spending more time on preparing the data for the database.
 * **Users love MongoDB because it offers the fastest time to value compared to any other DBMS technology**
 
+### Version History
+
+   * MongoDB is a document-based database which is developed in the C++ programming languages. 
+   * The word Mongo is basically derived from Humongous. MongoDB was first developed by a New York-based organization named 10gen in the year of 2007. 
+   * Later 10gen changed the name and known as MongoDB Inc as of today. 
+   * At the beginning, MongoDB is basically developed as a PAAS (Platform as a Service) database. 
+   * But, in the year 2009, it was introduced as an open source database as named MongoDB 1.0. 
+   * The below diagram demonstrates the release history of MongoDB till date. 
+   * MongoDB 4.0 is the current stable version which is released in February, 2018.
+   
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/mongo-versionhistory.png)
+
 ### MongoDB is an open-source document database that provides 
       * high performance, 
       * high availability, and 
@@ -40,6 +65,15 @@
   * routing user requests to the correct machines.
   
 ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/MONGO-DB-1-01.webp)
+
+### How MongoDB Stores Data?
+
+  * MongoDB stores data in documents in-spite of tables.
+  * You can change the structure of records (which is called as documents in MongoDB) simply by adding new fields or deleting existing ones
+  * This ability of MongoDB help you to represent hierarchical relationships, to store arrays, and other more complex structures easily. 
+  * MongoDB provides high performance, high availability, easy scalability and out-of-the-box replication and auto-sharding.
+  
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/mongodb3.png)
   
 ### WHAT IS SEMI-STRUCTURED DATA?
 
@@ -267,6 +301,15 @@ use admin
   * Global replication
   * Economical
   
+### Use Cases -- why and where?
+
+  * E-Commerce type of product-based applications
+  * Blog and Content Management systems
+  * High Speed logging, caching etc in the Real time
+  * Need to maintain location wise Geospatial data
+  * For maintains data related to the Social and Networking types
+  * If application is a loosely coupled mechanism – means design may change at any point of time.
+
 ### the business requirements.
   
   * MongoDB provides the right mix of technology and data for competitive advantage.
@@ -319,6 +362,27 @@ use admin
   * It deploys the internal memory for providing faster access to data and storing the working set.
   * The cost of managing traditional databases is high. Mistakes made during routine maintenance are responsible for 80 percent of application downtime.
   
+  * CRUD (Create, Read, Update & Delete) operations with the data.
+  * MongoDB is a Schema less document type database.
+  * MongoDB support field, range based query, regular expression or regex etc for searching the data from the stored data.
+  * MongoDB is very easy to scale up or down.
+  * MongoDB basically uses internal memory for storing the working temporary datasets for which it is much faster.
+  * MongoDB support primary and secondary index on any fields.
+  * MongoDB supports replication of database.
+  * We can perform load balancing in the MongoDB by using Sharding. It scales the database horizontally by using Sharding.
+  * MongoDB can be used as a file storage system which is known as a GridFS.
+  * MongoDB provides the different ways to perform aggregation operations on the data like aggregation pipeline, map reduce or single objective aggregation commands.
+  * MongoDB can store any type of file which can be any size without effecting our stack
+  * MongoDB basically use JavaScript objects in place of procedure.
+  * MongoDB support special collection type like TTL (Time-To-Live) for data storage which expire at a certain time
+  * The dynamic database schema used in MongoDB is called the BSON
+  
+### MongoDB Limitations
+
+  * Since MongoDB is not as strong ACID (Atomic, Consistency, Isolation & Durability) as compare to the most RDBMS systems.
+  * It can’t handle complex transactions
+  * In MongoDB, there is not provision for Stored Procedure or functions or trigger so there are no chances to implement any business logic in the database level which can be done in any RBMS systems.
+  
 ###  Frequently Used Commands in MongoDB
 
   * Database Creation : Use Database_name
@@ -348,6 +412,10 @@ use admin
   * One of the biggest insurance companies on earth MetLife is extensively using MongoDB for its customer service applications;
   * the online classifieds search portal, Craigslist is deeply involved in archiving its data using MongoDB.
   * One of the most hailed brands in the media industry, The New York Times is using MongoDB for its photo submissions and the application that is deployed for form-building.
+  
+### Platform And Language Support
+
+  * C,C++,C# & .NET, Java , Node.js , Perl , PHP, PHP Libraries, Frameworks, and Tools., Python, Ruby, Mongoid (Ruby ODM)
 
 `Source` : https://intellipaat.com/blog/what-is-mongodb/ </br>
 `Source` : https://www.3pillarglobal.com/insights/what-is-mongodb
