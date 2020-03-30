@@ -29,6 +29,43 @@
 * What it means that you can **concentrate more on making your data work harder** rather than spending more time on preparing the data for the database.
 * **Users love MongoDB because it offers the fastest time to value compared to any other DBMS technology**
 
+### MongoDB is an open-source document database that provides 
+      * high performance, 
+      * high availability, and 
+      * automatic scaling.
+      
+  * Its document-oriented data model makes it easier to split up data across multiple servers.
+  * MongoDB automatically takes care of balancing data and load across a cluster
+  * redistributing documents automatically
+  * routing user requests to the correct machines.
+  
+### WHAT IS SEMI-STRUCTURED DATA?
+
+  * Semi-structured data is data that does not conform with the formal structure of data.
+  * The semi-structured model is a database model where there is no separation between the data and the schema.
+  
+### WHAT IS A DOCUMENT-ORIENTED DATABASE?
+
+  * document-oriented database is software designed for storing and retrieving information in the form of semi-structured data, also known as documents
+  * It replaces the concept of a “row.” By allowing embedded documents and arrays
+  * the document-oriented approach makes it possible to represent complex hierarchical relationships with a single record.
+  
+### KEY FEATURES
+
+* `High Performance`: MongoDB provides high performance data persistence. It supports embedded data models to reduce I/O activity on a database system, as well as indexes for faster queries, and can include keys from embedded documents and arrays
+
+* `High Availability`: To provide high quality availability, MongoDb’s replication facility (known as replica sets) provide both automatic failover and data redundancy. A replica set is a group of MongoDB servers that maintain the same data set and provide both redundancy and increased data availability
+
+* `Automatic Scaling`: MongoDB provides horizontal scalability as part of its core functionality. Automatic sharding distributes data across a cluster of machines, while replica sets can provide eventually-consistent reads for low-latency deployments
+
+### CORE COMPONENTS OF MONGODB
+
+* `Mongod`: As the primary daemon process for the MongoDB system, **Mongod handles data requests, manages data access, and performs background management operations**
+
+* `Mongos`: **Mongos is utilized as a routing service for MongoDB Shard configurations**. This component processes **queries from the application layer** and **determines the data’s location in the sharded cluster** so as to complete the commanded operations. From the perspective of the application, a **Mongos instance behaves identically to any other MongoDB instance**
+
+* `Mongo`: **Mongo is an interactive JavaScript shell interface** for MongoDB and provides an **interface to test queries and operations directly within the database**. Mongo also provides a **fully functional JavaScript environment** to use with MongoDB
+
 ### Architecture of MongoDB NoSQL Database
 
 `Database` 
@@ -46,6 +83,12 @@
   * **Documents** are associated with **dynamic schemas**.
   * The **benefit of having dynamic schemas** is that a document in a **single collection does not have to possess the same structure or fields**.
   * Also, the **common fields in a collection’s document can have varied types of data**.
+  
+### BSON and MongoDB
+
+  * BSON is a binary-encoded serialization of JSON-like documents and is designed to be lightweight, traversable, and efficient. 
+  * BSON, like JSON, supports the embedding of objects and arrays within other objects and arrays. 
+  * MongoDB uses BSON as the data storage and network transfer format for its documents.
   
 ###  What makes it different from RDBMS?
 
