@@ -39,6 +39,8 @@
   * redistributing documents automatically
   * routing user requests to the correct machines.
   
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/MONGO-DB-1-01.webp)
+  
 ### WHAT IS SEMI-STRUCTURED DATA?
 
   * Semi-structured data is data that does not conform with the formal structure of data.
@@ -68,6 +70,8 @@
 
 ### Architecture of MongoDB NoSQL Database
 
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/The-architecture-of-MongoDB-NoSQL-Database.webp)
+
 `Database` 
   * In simple words, it can be called the **physical container for data**. Each of the databases has its **own set of files** on the file system with **multiple databases existing on a single MongoDB server**.
   
@@ -89,6 +93,20 @@
   * BSON is a binary-encoded serialization of JSON-like documents and is designed to be lightweight, traversable, and efficient. 
   * BSON, like JSON, supports the embedding of objects and arrays within other objects and arrays. 
   * MongoDB uses BSON as the data storage and network transfer format for its documents.
+  
+### Sample Representation of a Document in MongoDB
+
+  * `Document`
+  
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/xDocument.png.pagespeed.ic.4bChw0MYgu.png)
+
+  * `Referenced Documents`  
+
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/xReferenced-Documents.png.pagespeed.ic.aw4HszXkJZ.png)
+
+  * `Embedded Documents`
+ 
+ ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/xEmbedded-Documents.png.pagespeed.ic.HzcoRouTyl.png)
   
 ###  What makes it different from RDBMS?
 
@@ -112,7 +130,21 @@
 | Has dynamic schema and ideal for hierarchical data storage  | Has predefined schema and not good for hierarchical data storage  |
 | 100 times faster and horizontally scalable through sharding  | By increasing RAM, vertical scaling can happen  |
 
+### DB Objects Comparison
+
+| MongoDB Objects  | SQL Objects |
+| ------------- | ------------- |
+| Database  | Database (schema)  |
+| Collection  | Table  |
+| Index  | Index  |
+| Document  | Row  |
+| Field  | Column  |
+| Linking & Embedding  | Joining  |
+| Shard  | Partition  |
+
 ### Important Features of MongoDB
+
+![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/MONGO-DB-3-01.webp)
 
   * `Queries` :: It supports ad-hoc queries and document-based queries.
   * `Index Support` :: Any field in the document can be indexed.
@@ -166,6 +198,9 @@
       * with powerful GUI and command line tools
       * makes it fast for developers to build and evolve applications
       * Automated provisioning enables continuous integration and delivery for productive operations
+   
+   ![MongoDB](https://github.com/gtl-madhav/MongoDB/blob/master/images/mongo-db-2-01.webp)
+   
   * Flexible Data Model
       * MongoDB stores data in flexible JSON-like documents
       * data persistence and combining easy
